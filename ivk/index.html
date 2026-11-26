@@ -3,100 +3,213 @@
 <meta name="description" content="Ассоциация кино- и медиапедагогов «Институт визуальных коммуникаций»: фестивальное движение «Мы сами снимаем кино!», Киносочинение, Киноэкспедиция, «Кино — в школу!», ИИМАТОГРАФ, летняя киношкола «Покров», Клуб кинопедагогов.">
 <meta property="og:title" content="Ассоциация кино- и медиапедагогов «Институт визуальных коммуникаций»">
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,Segoe UI,Roboto,sans-serif;background:#5b5b5b;color:#111}
-.g{max-width:1000px;margin:0 auto;padding:18px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(120px,auto);gap:16px}
-.t{border-radius:26px;padding:22px;background:#fff;text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;gap:10px;overflow:hidden;position:relative;transition:transform .15s}
-a.t:hover{transform:translateY(-3px)}a.t:active{transform:scale(.98)}
-.peach{background:#fcd9c8}.black{background:#0d0d0d;color:#fff}
-.orange{background:radial-gradient(120% 90% at 30% 60%,#ff6a1a 0%,#c2410c 35%,#1a0d07 80%);color:#fff}
-.pill{display:inline-block;border:1.5px solid currentColor;border-radius:30px;padding:5px 14px;font-size:13px;align-self:flex-start}
-.btn{display:inline-block;background:#f05a1a;color:#fff;border-radius:30px;padding:10px 20px;font-weight:600;font-size:15px;align-self:flex-start;text-decoration:none}
-.btn.w{background:#fff;color:#111}.btns{display:flex;gap:10px;flex-wrap:wrap}
-.photo{grid-column:span 2;grid-row:span 2;background:#fcd9c8 url(photo.jpg) center 15%/cover;min-height:320px;justify-content:flex-end}
-.photo .n{background:#fff;border-radius:16px;padding:10px 14px;font-weight:700;align-self:flex-start;color:#111;text-decoration:none}
-.name{grid-column:span 2;grid-row:span 2}.name h1{font-size:40px;line-height:1.05;margin:16px 0 10px;letter-spacing:-.02em}.name p{margin:0;color:#444;font-size:16px}
-.logo{align-items:center;justify-content:center}.logo .c{width:150px;height:150px;border-radius:50%;background:#fff url(logo.png?v=3) center/contain no-repeat}
-.w2{grid-column:span 2}.w4{grid-column:span 4}.e{font-size:28px}b.h{font-size:22px;display:block;line-height:1.15}.d{font-size:14px;opacity:.8;margin-top:6px;display:block;line-height:1.4}
-.big{font-size:44px;font-weight:800;color:#f05a1a;line-height:1}
-.nav{display:flex;flex-wrap:wrap;gap:8px}.nav a{font-size:13px;border-radius:30px;padding:6px 12px;background:#fff;color:#111;text-decoration:none;border:1.5px solid #111}
-.sec{grid-column:span 4;color:#fff;padding:26px 6px 0;scroll-margin-top:10px}.sec .num{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fcd9c8}.sec h2{margin:6px 0 4px;font-size:30px;letter-spacing:-.01em}.sec p{margin:0;opacity:.85;font-size:15px;max-width:720px}
-.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}.flow span{background:rgba(0,0,0,.08);border-radius:20px;padding:4px 10px}.black .flow span,.orange .flow span{background:rgba(255,255,255,.15)}
-.map{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.map a{background:#fff;border-radius:16px;padding:12px;color:#111;text-decoration:none;font-size:13px;line-height:1.3}.map a b{display:block;font-size:14px;margin-bottom:4px}
-.sub{border-left:3px solid #f05a1a;padding-left:12px}
-.partners{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}.partners li{background:#f4f4f4;border-radius:14px;padding:10px 14px;font-size:14px;font-weight:600;display:flex;align-items:center}
+:root{--bg:#f3f1ec;--ink:#1d1c1a;--mute:#5f5b55;--line:#e2ded6;--nav-h:58px;
+--a1:#b8573a;--l1:#f6e6de;--m1:#ecc9b9;  /* детское кинотворчество — терракота */
+--a2:#2f6482;--l2:#e2edf2;--m2:#bcd3df;  /* обучение педагогов — синий */
+--a3:#5e7240;--l3:#e9eedf;--m3:#c9d5b4;  /* исследования — олива */
+--a4:#6f4c86;--l4:#ece5f1;--m4:#d2c2de;  /* цифровое творчество — слива */
+--a5:#a57a26;--l5:#f4ecda;--m5:#e3d0a6;  /* сообщество — охра */
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
+body{margin:0;font-family:Inter,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.4}
+a{color:inherit}
+/* sticky nav */
+.topnav{position:sticky;top:0;z-index:20;background:rgba(243,241,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topnav .in{max-width:1240px;margin:0 auto;justify-content:safe center;height:var(--nav-h);display:flex;align-items:center;gap:6px;padding:0 18px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.topnav .in::-webkit-scrollbar{display:none}
+.topnav .brand{font-weight:800;font-size:15px;text-decoration:none;margin-right:10px;letter-spacing:.02em}
+.topnav a.lnk{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;text-decoration:none;padding:7px 11px;border-radius:30px;color:var(--mute);transition:background .2s,color .2s;flex-shrink:0}
+.topnav a.lnk i{width:9px;height:9px;border-radius:50%;background:#9a958c;flex-shrink:0}
+.topnav a.lnk:hover{background:#fff;color:var(--ink)}
+.topnav a.lnk.on{background:var(--ink);color:#fff}
+.n1 i{background:var(--a1)!important}.n2 i{background:var(--a2)!important}.n3 i{background:var(--a3)!important}.n4 i{background:var(--a4)!important}.n5 i{background:var(--a5)!important}
+.topnav a.n1.on{background:var(--a1)}.topnav a.n2.on{background:var(--a2)}.topnav a.n3.on{background:var(--a3)}.topnav a.n4.on{background:var(--a4)}.topnav a.n5.on{background:var(--a5)}
+.topnav a.lnk.on i{background:#fff!important}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+.g{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+/* cards */
+.t{border-radius:22px;padding:22px;background:#fff;text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;gap:10px;overflow:hidden;position:relative;transition:transform .15s,box-shadow .15s;border:1px solid var(--line)}
+a.t:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.07)}a.t:active{transform:scale(.98)}
+.w2{grid-column:span 2}.w4{grid-column:span 4}
+.pill{display:inline-block;border:1.5px solid currentColor;border-radius:30px;padding:4px 12px;font-size:12.5px;align-self:flex-start;opacity:.85}
+.btn{display:inline-block;background:var(--ink);color:#fff;border-radius:30px;padding:10px 20px;font-weight:600;font-size:15px;align-self:flex-start;text-decoration:none}
+.btn.w{background:#fff;color:var(--ink);border:1px solid var(--line)}.btns{display:flex;gap:10px;flex-wrap:wrap}
+b.h{font-size:21px;display:block;line-height:1.18}.d{font-size:14.5px;color:var(--mute);display:block;line-height:1.45}.e{font-size:26px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}.flow span{background:rgba(0,0,0,.06);border-radius:20px;padding:4px 10px}
+/* hero */
+.hero{padding:22px 0 10px}
+.name{grid-column:span 2;grid-row:span 2}.name h1{font-size:42px;line-height:1.04;margin:14px 0 10px;letter-spacing:-.02em}.name p{margin:0;color:var(--mute);font-size:16px}
+.photo{grid-column:span 2;grid-row:span 2;background:#e9e5de url(photo.jpg) center 15%/cover;min-height:320px;justify-content:flex-end}
+.photo .n{background:#fff;border-radius:14px;padding:10px 14px;font-weight:700;align-self:flex-start;text-decoration:none}
+.mission{background:var(--ink);color:#fff;border-color:var(--ink)}
+.logo{align-items:center;justify-content:center}.logo .c{width:140px;height:140px;border-radius:50%;background:#fff url(logo.png?v=3) center/contain no-repeat}
+.small{font-size:13px;color:var(--mute)}
+/* about map */
+.about{padding:34px 0 8px}
+.kick{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.about h2{font-size:30px;margin:6px 0 8px;letter-spacing:-.01em}.about p{margin:0 0 18px;color:var(--mute);max-width:760px}
+.map{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.map a{border-radius:18px;padding:16px;text-decoration:none;font-size:13.5px;line-height:1.35;border-top:5px solid;transition:transform .15s}
+.map a:hover{transform:translateY(-3px)}
+.map a .no{font-size:30px;font-weight:800;line-height:1;display:block;margin-bottom:8px}
+.map a b{display:block;font-size:15px;margin-bottom:6px;color:var(--ink)}.map a span.x{color:var(--mute)}
+.map .m1{background:var(--l1);border-color:var(--a1)}.map .m1 .no{color:var(--a1)}
+.map .m2{background:var(--l2);border-color:var(--a2)}.map .m2 .no{color:var(--a2)}
+.map .m3{background:var(--l3);border-color:var(--a3)}.map .m3 .no{color:var(--a3)}
+.map .m4{background:var(--l4);border-color:var(--a4)}.map .m4 .no{color:var(--a4)}
+.map .m5{background:var(--l5);border-color:var(--a5)}.map .m5 .no{color:var(--a5)}
+/* section blocks */
+.blk{margin:26px 0;border-radius:30px;padding:28px;background:var(--l);border-left:8px solid var(--a)}
+.s1{--a:var(--a1);--l:var(--l1);--m:var(--m1)}.s2{--a:var(--a2);--l:var(--l2);--m:var(--m2)}.s3{--a:var(--a3);--l:var(--l3);--m:var(--m3)}.s4{--a:var(--a4);--l:var(--l4);--m:var(--m4)}.s5{--a:var(--a5);--l:var(--l5);--m:var(--m5)}
+.bh{display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+.bh .num{font-size:64px;font-weight:800;line-height:.9;color:var(--a);letter-spacing:-.03em;flex-shrink:0}
+.bh .lab{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--a);font-weight:700}
+.bh h2{margin:4px 0 6px;font-size:30px;letter-spacing:-.01em;line-height:1.1}.bh p{margin:0;color:var(--mute);max-width:720px}
+.bh .bar{display:block;width:64px;height:5px;border-radius:5px;background:var(--a);margin-top:12px}
+.blk .t{border-color:var(--m)}
+.blk .t .pill{color:var(--a)}
+.blk .tint{background:var(--m);border-color:var(--m)}
+.blk .deep{background:var(--a);border-color:var(--a);color:#fff}.blk .deep .pill{color:#fff}.blk .deep .d{color:rgba(255,255,255,.85)}.blk .deep .flow span{background:rgba(255,255,255,.18)}
+.blk .btn{background:var(--a)}.blk .deep .btn{background:#fff;color:var(--a)}.blk .btn.w{background:#fff;color:var(--a);border-color:var(--m)}
+.blk .sub{border-left:3px solid var(--a);padding-left:12px}
+.big{font-size:46px;font-weight:800;color:var(--a);line-height:1}
+/* service sections */
+.svc{margin:26px 0;border-radius:30px;padding:28px;background:#fff;border:1px solid var(--line)}
+.svc .sh{margin-bottom:18px}.svc .sh h2{margin:4px 0 0;font-size:26px}
+.svc .t{background:var(--bg)}
+.partners{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none;align-items:center}.partners li{background:var(--bg);border-radius:14px;padding:10px 14px;font-size:14px;font-weight:600}
 .partners img{display:block;width:96px;height:96px}
-.bar{grid-column:span 2;display:flex;flex-direction:row;align-items:center;gap:10px}.bar i{flex:1;height:22px;border-radius:20px}
-footer{grid-column:span 4;text-align:center;font-size:20px;font-weight:700;color:#fff;padding:18px 0}
-.small{font-size:13px;opacity:.8}
-@media(max-width:720px){.g{grid-template-columns:repeat(2,1fr)}.name,.photo,.bar,footer,.sec,.w4{grid-column:span 2}.name{grid-row:span 1}.name h1{font-size:30px}.w2{grid-column:span 2}.map{grid-template-columns:1fr 1fr}.sec h2{font-size:24px}}
-</style></head><body><div class="g">
+.dark{background:var(--ink)!important;color:#fff;border-color:var(--ink)!important}.dark .d{color:rgba(255,255,255,.8)}
+footer{text-align:center;font-size:20px;font-weight:700;padding:26px 0 40px;color:var(--ink)}
+.stripe{display:flex;gap:8px;justify-content:center;margin-bottom:14px}.stripe i{width:42px;height:6px;border-radius:6px}
+.totop{position:fixed;right:18px;bottom:18px;z-index:30;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .25s}
+.totop.show{opacity:1;pointer-events:auto}
+@media(max-width:860px){.map{grid-template-columns:1fr 1fr}.map a:last-child{grid-column:span 2}}
+@media(max-width:720px){.g{grid-template-columns:repeat(2,1fr)}.name,.photo,.w4{grid-column:span 2}.w2{grid-column:span 2}.name{grid-row:span 1}.name h1{font-size:31px}
+.blk,.svc{padding:20px 16px;border-radius:24px}.blk{border-left-width:6px}.bh{gap:14px}.bh .num{font-size:46px}.bh h2{font-size:23px}.about h2{font-size:24px}.topnav .brand{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+
+<nav class="topnav" aria-label="Разделы"><div class="in">
+<a class="brand" href="#top">ИВК</a>
+<a class="lnk" href="#about"><i></i>Об Ассоциации</a>
+<a class="lnk n1" href="#kids"><i></i>Детское кинотворчество</a>
+<a class="lnk n2" href="#teachers"><i></i>Обучение педагогов</a>
+<a class="lnk n3" href="#research"><i></i>Исследования</a>
+<a class="lnk n4" href="#digital"><i></i>Цифровое творчество</a>
+<a class="lnk n5" href="#club"><i></i>Сообщество</a>
+<a class="lnk" href="#contacts"><i></i>Контакты</a>
+</div></nav>
+
+<div class="wrap" id="top">
 
 <!-- 0. ГЛАВНЫЙ ЭКРАН -->
-<div class="t peach name"><span class="pill">Ассоциация кино- и медиапедагогов</span><div><h1>Институт визуальных коммуникаций</h1><p>Снимаем кино, которое воспитывает. От притчи до премьеры</p></div>
-<nav class="nav" aria-label="Разделы"><a href="#about">Об Ассоциации</a><a href="#kids">Детское кинотворчество</a><a href="#teachers">Обучение педагогов</a><a href="#research">Исследования</a><a href="#digital">Цифровое творчество</a><a href="#club">Сообщество</a><a href="#contacts">Контакты</a></nav></div>
+<div class="hero g">
+<div class="t name"><span class="pill">Ассоциация кино- и медиапедагогов</span><div><h1>Институт визуальных коммуникаций</h1><p>Снимаем кино, которое воспитывает. От притчи до премьеры</p></div></div>
 <div class="t photo"><a class="n" href="https://aimatograf.ru/flash-portfolio/" target="_blank" rel="noopener">Александр Костюченко →</a></div>
-<div class="t black w2"><span class="pill">Миссия</span><b class="h" style="font-size:26px">«Сохранить человечность в эпоху цифровых технологий»</b></div>
+<div class="t mission w2"><span class="pill">Миссия</span><b class="h" style="font-size:26px">«Сохранить человечность в эпоху цифровых технологий»</b></div>
 <a class="t logo w2" href="https://rutube.ru/video/d54b9c26561b0b9c6b5beb802564f970/" target="_blank" rel="noopener" title="Смотреть видео на Rutube"><div class="c"></div><span class="small">▶ Смотреть видео об Ассоциации</span></a>
+</div>
 
 <!-- 1. ОБ АССОЦИАЦИИ -->
-<div class="sec" id="about"><span class="num">Об Ассоциации</span><h2>Семь направлений — одна система</h2><p>Развитие человека через творчество, киноискусство и визуальные коммуникации. Дети, молодёжь и педагоги осваивают язык современного мира, учатся мыслить образами и создавать собственные произведения средствами кино и новых цифровых технологий.</p></div>
-<div class="t w4"><div class="map">
-<a href="#kids"><b>1. Детское кинотворчество</b>«Мы сами снимаем кино!», Киносочинение, киношкола «Покров»</a>
-<a href="#teachers"><b>2. Обучение педагогов</b>«Кино — в школу!»: курсы и повышение квалификации</a>
-<a href="#research"><b>3. Исследования</b>Киноэкспедиция</a>
-<a href="#digital"><b>4. Цифровое творчество</b>ИИМАТОГРАФ и «Союз ИИМАТОГРАФИСТОВ»</a>
-<a href="#club"><b>5. Сообщество</b>Клуб кинопедагогов</a>
-</div></div>
+<section class="about" id="about"><span class="kick">Об Ассоциации</span><h2>Семь направлений — одна система</h2><p>Развитие человека через творчество, киноискусство и визуальные коммуникации. Дети, молодёжь и педагоги осваивают язык современного мира, учатся мыслить образами и создавать собственные произведения средствами кино и новых цифровых технологий.</p>
+<div class="map">
+<a class="m1" href="#kids"><span class="no">01</span><b>Детское кинотворчество</b><span class="x">«Мы сами снимаем кино!», Киносочинение, киношкола «Покров»</span></a>
+<a class="m2" href="#teachers"><span class="no">02</span><b>Обучение педагогов</b><span class="x">«Кино — в школу!»: курсы и повышение квалификации</span></a>
+<a class="m3" href="#research"><span class="no">03</span><b>Исследования</b><span class="x">Киноэкспедиция</span></a>
+<a class="m4" href="#digital"><span class="no">04</span><b>Цифровое творчество</b><span class="x">ИИМАТОГРАФ и «Союз ИИМАТОГРАФИСТОВ»</span></a>
+<a class="m5" href="#club"><span class="no">05</span><b>Сообщество</b><span class="x">Клуб кинопедагогов</span></a>
+</div></section>
 
 <!-- 2. ДЕТСКОЕ КИНОТВОРЧЕСТВО -->
-<div class="sec" id="kids"><span class="num">Направление 1</span><h2>Детское кинотворчество: фестивали и творческие форматы</h2><p>Дети и подростки создают собственное кино вместе с педагогами-наставниками.</p></div>
-<div class="t peach w4" style="flex-direction:row;align-items:center;gap:16px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:12px;flex:1;min-width:240px"><span class="pill">Фестивальное движение · с 2012 года</span><b class="h" style="font-size:28px">«Мы сами снимаем кино!»</b><span class="d" style="margin:0">Участники не просто присылают фильмы на конкурс, а проходят путь создания собственной кинопритчи вместе с педагогом-наставником.</span><div class="flow"><span>Драматургия</span>→<span>Съёмка</span>→<span>Монтаж</span>→<span>Кинопритча</span></div><div class="btns"><a class="btn" href="https://vk.ru/kino_pritchi" target="_blank" rel="noopener">Записаться</a><a class="btn w" href="https://rutube.ru/video/069f1a15af19dc27cfe3f2f3c44a7494/" target="_blank" rel="noopener">▶ Смотреть видео</a></div></div><img src="mssk.jpg" alt="Мы сами снимаем кино!" style="width:120px;height:120px;object-fit:contain;background:#fff;border-radius:18px;padding:6px;flex-shrink:0"></div>
+<section class="blk s1" id="kids">
+<div class="bh"><span class="num">01</span><div><span class="lab">Направление 1</span><h2>Детское кинотворчество: фестивали и творческие форматы</h2><p>Дети и подростки создают собственное кино вместе с педагогами-наставниками.</p><span class="bar"></span></div></div>
+<div class="g">
+<div class="t deep w4" style="flex-direction:row;align-items:center;gap:16px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:12px;flex:1;min-width:240px"><span class="pill">Фестивальное движение · с 2012 года</span><b class="h" style="font-size:28px">«Мы сами снимаем кино!»</b><span class="d">Участники не просто присылают фильмы на конкурс, а проходят путь создания собственной кинопритчи вместе с педагогом-наставником.</span><div class="flow"><span>Драматургия</span>→<span>Съёмка</span>→<span>Монтаж</span>→<span>Кинопритча</span></div><div class="btns"><a class="btn" href="https://vk.ru/kino_pritchi" target="_blank" rel="noopener">Записаться</a><a class="btn" href="https://rutube.ru/video/069f1a15af19dc27cfe3f2f3c44a7494/" target="_blank" rel="noopener">▶ Смотреть видео</a></div></div><img src="mssk.jpg" alt="Мы сами снимаем кино!" style="width:120px;height:120px;object-fit:contain;background:#fff;border-radius:18px;padding:6px;flex-shrink:0"></div>
 <a class="t w2" href="https://cinematoschool.ru/mudrostvekov" target="_blank" rel="noopener"><span class="pill">Региональный фестиваль движения</span><div class="sub"><b class="h">🏆 «Мудрость веков»</b><span class="d">Фестиваль · декабрь · Наро-Фоминск</span></div><span class="btn">Заявка</span></a>
 <a class="t w2" href="https://cinematoschool.ru/kinovar" target="_blank" rel="noopener"><span class="pill">Региональный фестиваль движения</span><div class="sub"><b class="h">🎬 «Киноварь»</b><span class="d">Фестиваль · май</span></div><span class="btn">Заявка на участие</span></a>
-<div class="t black w2"><span class="pill">Авторский творческий формат · с 2025 года</span><b class="h" style="font-size:26px">Киносочинение</b><span class="d">Визуальное мышление: идеи, чувства и смыслы превращаются в экранные образы, символы и метафоры.</span><div class="flow"><span>Идея</span>→<span>Образ и метафора</span>→<span>Киноязык</span>→<span>Авторское произведение</span></div></div>
-<a class="t orange w2" href="https://cinematoschool.ru/kino_pobeda" target="_blank" rel="noopener"><span class="pill">Всероссийская акция в формате «Киносочинение»</span><b class="h" style="font-size:26px">КИНО О ПОБЕДЕ</b><span class="d">Авторские монтажные работы из фрагментов фильмов о войне, Победе, подвиге и памяти. Партнёры: Киноконцерн «Мосфильм», Минкультуры России, Минпросвещения России, МПГУ.</span><span class="btn">Стань участником</span></a>
-<div class="t peach w2"><span class="pill">Летний кинолагерь · Брянская область, Усадьба Княжичи</span><b class="h" style="font-size:26px">☀️ Летняя киношкола «Покров»</b><span class="d">Смена, где дети и подростки снимают кино на природе: драматургия, съёмка, монтаж. Работы могут продолжить путь на фестивалях движения.</span></div>
-<a class="t black w2" href="https://юниормастерс-креатив.рф/" target="_blank" rel="noopener"><span class="pill">Партнёрский проект</span><b class="h" style="font-size:24px">🏅 Чемпионат «КреативМастерс Юниор»</b><span class="btn">Записаться</span></a>
+<div class="t tint w2"><span class="pill">Авторский творческий формат · с 2025 года</span><b class="h" style="font-size:25px">Киносочинение</b><span class="d">Визуальное мышление: идеи, чувства и смыслы превращаются в экранные образы, символы и метафоры.</span><div class="flow"><span>Идея</span>→<span>Образ и метафора</span>→<span>Киноязык</span>→<span>Авторское произведение</span></div></div>
+<a class="t w2" href="https://cinematoschool.ru/kino_pobeda" target="_blank" rel="noopener"><span class="pill">Всероссийская акция в формате «Киносочинение»</span><b class="h" style="font-size:25px">КИНО О ПОБЕДЕ</b><span class="d">Авторские монтажные работы из фрагментов фильмов о войне, Победе, подвиге и памяти. Партнёры: Киноконцерн «Мосфильм», Минкультуры России, Минпросвещения России, МПГУ.</span><span class="btn">Стань участником</span></a>
+<div class="t tint w2"><span class="pill">Летний кинолагерь · Брянская область, Усадьба Княжичи</span><b class="h" style="font-size:25px">☀️ Летняя киношкола «Покров»</b><span class="d">Смена, где дети и подростки снимают кино на природе: драматургия, съёмка, монтаж. Работы могут продолжить путь на фестивалях движения.</span></div>
+<a class="t w2" href="https://юниормастерс-креатив.рф/" target="_blank" rel="noopener"><span class="pill">Партнёрский проект</span><b class="h" style="font-size:23px">🏅 Чемпионат «КреативМастерс Юниор»</b><span class="btn">Записаться</span></a>
+</div></section>
 
 <!-- 3. ОБУЧЕНИЕ ПЕДАГОГОВ -->
-<div class="sec" id="teachers"><span class="num">Направление 2</span><h2>Обучение педагогов: «Кино — в школу!»</h2><p>Подготовка педагогов и наставников к использованию кино и визуального творчества в работе с детьми и молодёжью. Это кадровая основа всех направлений.</p></div>
-<div class="t peach"><span class="big">2 000+</span><span class="d" style="opacity:1">педагогов прошли обучение</span></div>
-<a class="t w2" href="https://cinematoschool.ru/movie" target="_blank" rel="noopener"><span class="pill">Программа повышения квалификации</span><b class="h">«Кино — в школу!» · интерактивная кинопедагогика</b><span class="btn">Подробнее</span></a>
-<a class="t black" href="https://cinematoschool.ru/consult" target="_blank" rel="noopener"><span class="e">💬</span><b class="h">Запись на консультацию</b></a>
-<a class="t peach w2" href="https://cinematoschool.ru/mobile_movie" target="_blank" rel="noopener"><span class="pill">Курсы повышения квалификации</span><b class="h">Мобильное кино в школе и дома</b><span class="btn">Записаться</span></a>
-<a class="t black" href="https://cinematoschool.ru/stop-motion" target="_blank" rel="noopener"><span class="pill">Краткосрочный курс</span><b class="h">Stop Motion</b><span class="d">Курс по анимации</span></a>
+<section class="blk s2" id="teachers">
+<div class="bh"><span class="num">02</span><div><span class="lab">Направление 2</span><h2>Обучение педагогов: «Кино — в школу!»</h2><p>Подготовка педагогов и наставников к использованию кино и визуального творчества в работе с детьми и молодёжью. Это кадровая основа всех направлений.</p><span class="bar"></span></div></div>
+<div class="g">
+<div class="t tint"><span class="big">2 000+</span><span class="d">педагогов прошли обучение</span></div>
+<a class="t deep w2" href="https://cinematoschool.ru/movie" target="_blank" rel="noopener"><span class="pill">Программа повышения квалификации</span><b class="h">«Кино — в школу!» · интерактивная кинопедагогика</b><span class="btn">Подробнее</span></a>
+<a class="t" href="https://cinematoschool.ru/consult" target="_blank" rel="noopener"><span class="e">💬</span><b class="h">Запись на консультацию</b></a>
+<a class="t w2" href="https://cinematoschool.ru/mobile_movie" target="_blank" rel="noopener"><span class="pill">Курсы повышения квалификации</span><b class="h">Мобильное кино в школе и дома</b><span class="btn">Записаться</span></a>
+<a class="t" href="https://cinematoschool.ru/stop-motion" target="_blank" rel="noopener"><span class="pill">Краткосрочный курс</span><b class="h">Stop Motion</b><span class="d">Курс по анимации</span></a>
 <a class="t" href="https://cinematoschool.ru/premiere" target="_blank" rel="noopener"><span class="e">📘</span><b class="h">Гайд «От идеи до премьеры»</b></a>
+</div></section>
 
 <!-- 4. ИССЛЕДОВАНИЯ -->
-<div class="sec" id="research"><span class="num">Направление 3</span><h2>Исследования и экспедиции</h2></div>
-<a class="t orange w4" href="https://rutube.ru/video/1de9cabd1669f06d9827b3fe97586022/" target="_blank" rel="noopener"><span class="pill">Исследовательское и кинематографическое направление · с 2019 года</span><b class="h" style="font-size:28px">🧭 КИНОЭКСПЕДИЦИЯ</b><span class="d">Путешествия, изучение культурного и духовного наследия и авторские фильмы. Отправная точка — экспедиция на Святую Гору Афон.</span><div class="flow"><span>Путешествие</span>→<span>Исследование</span>→<span>Открытие</span>→<span>Осмысление</span>→<span>Кино</span></div><span class="btn">▶ Смотреть видео</span></a>
+<section class="blk s3" id="research">
+<div class="bh"><span class="num">03</span><div><span class="lab">Направление 3</span><h2>Исследования и экспедиции</h2><span class="bar"></span></div></div>
+<div class="g">
+<a class="t deep w4" href="https://rutube.ru/video/1de9cabd1669f06d9827b3fe97586022/" target="_blank" rel="noopener"><span class="pill">Исследовательское и кинематографическое направление · с 2019 года</span><b class="h" style="font-size:28px">🧭 КИНОЭКСПЕДИЦИЯ</b><span class="d">Путешествия, изучение культурного и духовного наследия и авторские фильмы. Отправная точка — экспедиция на Святую Гору Афон.</span><div class="flow"><span>Путешествие</span>→<span>Исследование</span>→<span>Открытие</span>→<span>Осмысление</span>→<span>Кино</span></div><span class="btn">▶ Смотреть видео</span></a>
+</div></section>
 
 <!-- 5. ЦИФРОВОЕ ТВОРЧЕСТВО -->
-<div class="sec" id="digital"><span class="num">Направление 4</span><h2>Цифровое творчество: ИИМАТОГРАФ</h2><p>Лаборатория цифрового творчества: сказочный способ освоить нейросети с нуля — легко и доступно.</p></div>
-<a class="t orange w2" href="https://aimatograf.ru/" target="_blank" rel="noopener"><span class="pill">Лаборатория и сообщество</span><b class="h" style="font-size:26px">ИИМАТОГРАФ · «Союз ИИМАТОГРАФИСТОВ»</b><span class="d">Сказки, притчи, песни и визуальные истории с помощью нейросетей — для педагогов, авторов, семей, детей и молодёжи. aimatograf.ru</span><span class="btn">Вступить в Союз</span></a>
-<a class="t black w2" href="https://cinematoschool.ru/iimatograf" target="_blank" rel="noopener"><span class="pill">Обучение</span><b class="h">Программа «ИИМАТОГРАФ»</b><div class="flow"><span>Идея</span>→<span>Персонажи</span>→<span>Раскадровка</span>→<span>Видео</span>→<span>Монтаж</span></div><span class="btn">Подробнее</span></a>
+<section class="blk s4" id="digital">
+<div class="bh"><span class="num">04</span><div><span class="lab">Направление 4</span><h2>Цифровое творчество: ИИМАТОГРАФ</h2><p>Лаборатория цифрового творчества: сказочный способ освоить нейросети с нуля — легко и доступно.</p><span class="bar"></span></div></div>
+<div class="g">
+<a class="t deep w2" href="https://aimatograf.ru/" target="_blank" rel="noopener"><span class="pill">Лаборатория и сообщество</span><b class="h" style="font-size:25px">ИИМАТОГРАФ · «Союз ИИМАТОГРАФИСТОВ»</b><span class="d">Сказки, притчи, песни и визуальные истории с помощью нейросетей — для педагогов, авторов, семей, детей и молодёжи. aimatograf.ru</span><span class="btn">Вступить в Союз</span></a>
+<a class="t w2" href="https://cinematoschool.ru/iimatograf" target="_blank" rel="noopener"><span class="pill">Обучение</span><b class="h">Программа «ИИМАТОГРАФ»</b><div class="flow"><span>Идея</span>→<span>Персонажи</span>→<span>Раскадровка</span>→<span>Видео</span>→<span>Монтаж</span></div><span class="btn">Подробнее</span></a>
+</div></section>
 
 <!-- 6. СООБЩЕСТВО -->
-<div class="sec" id="club"><span class="num">Направление 5</span><h2>Профессиональное сообщество</h2></div>
-<div class="t black w4"><div><span class="e">🎓</span><b class="h" style="font-size:26px;margin-top:8px">Клуб кинопедагогов</b><span class="d">Обмен опытом, поддержка выпускников «Кино — в школу!» и сеть наставников для фестивального движения.</span></div><div class="btns"><a class="btn" href="https://t.me/+AKOOHI-GBakxNzUy" target="_blank" rel="noopener">Telegram</a><a class="btn w" href="https://max.ru/join/dPXlTJLZD5RNR4FZIJ72C1b4uq5Cr7u5oqzgQm6femk" target="_blank" rel="noopener">MAX</a></div></div>
+<section class="blk s5" id="club">
+<div class="bh"><span class="num">05</span><div><span class="lab">Направление 5</span><h2>Профессиональное сообщество</h2><span class="bar"></span></div></div>
+<div class="g">
+<div class="t w4"><div><span class="e">🎓</span><b class="h" style="font-size:25px;margin-top:8px">Клуб кинопедагогов</b><span class="d" style="margin-top:6px">Обмен опытом, поддержка выпускников «Кино — в школу!» и сеть наставников для фестивального движения.</span></div><div class="btns"><a class="btn" href="https://t.me/+AKOOHI-GBakxNzUy" target="_blank" rel="noopener">Telegram</a><a class="btn w" href="https://max.ru/join/dPXlTJLZD5RNR4FZIJ72C1b4uq5Cr7u5oqzgQm6femk" target="_blank" rel="noopener">MAX</a></div></div>
+</div></section>
 
 <!-- 7. РУКОВОДИТЕЛЬ -->
-<div class="sec"><span class="num">Руководитель</span><h2>Александр Костюченко</h2></div>
-<a class="t peach w4" href="https://aimatograf.ru/flash-portfolio/" target="_blank" rel="noopener"><b class="h">Председатель правления Ассоциации кино- и медиапедагогов</b><span class="d" style="opacity:1">Журналист, издатель, продюсер, кинопедагог. Автор образовательных программ и творческих форматов в области кинообразования, визуальных коммуникаций и цифрового творчества. Около 30 лет в медиа, более 10 лет — в кинообразовании.</span><span class="btn">Портфолио →</span></a>
+<section class="svc"><div class="sh"><span class="kick">Руководитель</span><h2>Александр Костюченко</h2></div>
+<a class="t" href="https://aimatograf.ru/flash-portfolio/" target="_blank" rel="noopener"><b class="h">Председатель правления Ассоциации кино- и медиапедагогов</b><span class="d">Журналист, издатель, продюсер, кинопедагог. Автор образовательных программ и творческих форматов в области кинообразования, визуальных коммуникаций и цифрового творчества. Около 30 лет в медиа, более 10 лет — в кинообразовании.</span><span class="btn">Портфолио →</span></a>
+</section>
 
 <!-- 8. ПАРТНЁРЫ -->
-<div class="sec" id="trust"><span class="num">Партнёры</span><h2>Нам доверяют</h2></div>
-<div class="t w4"><ul class="partners">
+<section class="svc" id="trust"><div class="sh"><span class="kick">Партнёры</span><h2>Нам доверяют</h2></div>
+<ul class="partners">
 <li>Киноконцерн «Мосфильм»</li><li>Министерство культуры РФ</li><li>Министерство просвещения РФ</li><li>МПГУ</li><li>Ассоциация кинопедагогов «Образ»</li>
 <li style="background:none;padding:0"><a href="https://kinouroki.org" target="_blank" rel="noopener" aria-label="Киноуроки в школах России"><img src="../img/logo-kinouroki.svg" alt="" width="96" height="96"></a></li>
-</ul></div>
+</ul></section>
 
 <!-- 9. КОНТАКТЫ -->
-<div class="sec" id="contacts"><span class="num">Контакты</span><h2>Связаться с нами</h2></div>
-<div class="t black w2"><b class="h">НКО Ассоциация кино- и медиапедагогов «Институт визуальных коммуникаций»</b><span class="d"><a href="mailto:info@cinematoschool.ru" style="color:#fff">info@cinematoschool.ru</a> · <a href="tel:+79653545436" style="color:#fff">+7 965 354-54-36</a> · г. Москва</span><span class="d">Лицензия на образовательную деятельность № 041574 от 05.07.2021, Рособрнадзор</span></div>
+<section class="svc" id="contacts"><div class="sh"><span class="kick">Контакты</span><h2>Связаться с нами</h2></div>
+<div class="g">
+<div class="t dark w2"><b class="h">НКО Ассоциация кино- и медиапедагогов «Институт визуальных коммуникаций»</b><span class="d"><a href="mailto:info@cinematoschool.ru" style="color:#fff">info@cinematoschool.ru</a> · <a href="tel:+79653545436" style="color:#fff">+7 965 354-54-36</a> · г. Москва</span><span class="d">Лицензия на образовательную деятельность № 041574 от 05.07.2021, Рособрнадзор</span></div>
 <a class="t" href="https://aimatograf.ru/links/" target="_blank" rel="noopener"><span class="e">🔗</span><b class="h">Все каналы и соцсети</b></a>
-<a class="t orange" href="https://cinematoschool.ru/consult" target="_blank" rel="noopener"><span class="e">💬</span><b class="h">Запись на консультацию</b></a>
+<a class="t" href="https://cinematoschool.ru/consult" target="_blank" rel="noopener"><span class="e">💬</span><b class="h">Запись на консультацию</b></a>
+</div></section>
 
-<div class="bar"><i style="background:#f05a1a"></i><i style="background:#0d0d0d"></i><i style="background:#fcd9c8"></i></div>
-<footer>Сохранить человечность</footer>
-</div></body></html>
+<footer><div class="stripe"><i style="background:var(--a1)"></i><i style="background:var(--a2)"></i><i style="background:var(--a3)"></i><i style="background:var(--a4)"></i><i style="background:var(--a5)"></i></div>Сохранить человечность</footer>
+</div>
+
+<a class="totop" id="totop" href="#top" aria-label="Наверх">↑</a>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.topnav a.lnk'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var secs=Object.keys(map).map(function(id){return document.getElementById(id)}).filter(Boolean);
+  function setOn(id){links.forEach(function(a){a.classList.toggle('on',a===map[id])});
+    var a=map[id];if(a&&a.scrollIntoView){var bar=a.parentNode;bar.scrollTo({left:a.offsetLeft-bar.clientWidth/2+a.clientWidth/2,behavior:'smooth'})}}
+  if('IntersectionObserver' in window){
+    var vis={};
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){vis[e.target.id]=e.isIntersecting});
+      var cur=null;secs.forEach(function(s){if(vis[s.id]&&!cur)cur=s.id});
+      if(cur)setOn(cur);else links.forEach(function(a){a.classList.remove('on')});
+    },{rootMargin:'-80px 0px -55% 0px',threshold:0});
+    secs.forEach(function(s){io.observe(s)});
+  }
+  var tt=document.getElementById('totop');
+  window.addEventListener('scroll',function(){tt.classList.toggle('show',window.scrollY>600)},{passive:true});
+})();
+</script>
+</body></html>
